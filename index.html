@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>H.A Coaching Centre - Fees Slip</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- FORM SECTION -->
+    <div class="form-box">
+
+        <div class="heading">
+            <h1>H.A Coaching Centre</h1>
+            <p>Student Fees Slip</p>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="field full">
+                <label>Student Name</label>
+                <input type="text" id="studentName"
+                       placeholder="Enter student's name">
+            </div>
+
+            <div class="field">
+                <label>Roll No.</label>
+                <input type="text" id="rollNo"
+                       placeholder="Enter roll number">
+            </div>
+
+            <div class="field">
+                <label>Date</label>
+                <input type="date" id="date">
+            </div>
+
+            <div class="field">
+                <label>Fee Amount (₹)</label>
+                <input type="number" id="feeAmount"
+                       placeholder="Enter fee amount">
+            </div>
+
+            <div class="field">
+                <label>Due Amount (₹)</label>
+                <input type="number" id="dueAmount"
+                       placeholder="Enter due amount">
+            </div>
+
+            <div class="field full">
+                <label>External Charge (₹)</label>
+                <input type="number" id="externalCharge"
+                       placeholder="Enter external charge">
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button class="generate" onclick="generateSlip()">
+                Generate Fees Slip
+            </button>
+
+            <button class="reset" onclick="resetForm()">
+                Reset
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEES SLIP -->
+    <div class="slip" id="feesSlip">
+
+        <div class="slip-header">
+
+            <h2>H.A Coaching Centre</h2>
+
+            <p>Quality Education • Better Future</p>
+
+        </div>
+
+        <div class="receipt-title">
+            FEES RECEIPT
+        </div>
+
+
+        <div class="student-details">
+
+            <div class="detail-row">
+                <div class="label">Student Name</div>
+                <div class="value" id="showName"></div>
+            </div>
+
+            <div class="detail-row">
+                <div class="label">Roll No.</div>
+                <div class="value" id="showRoll"></div>
+            </div>
+
+            <div class="detail-row">
+                <div class="label">Date</div>
+                <div class="value" id="showDate"></div>
+            </div>
+
+        </div>
+
+
+        <table class="amount-table">
+
+            <tr>
+                <th>Particular</th>
+                <th>Amount</th>
+            </tr>
+
+            <tr>
+                <td>Fee Amount</td>
+                <td>₹ <span id="showFee">0.00</span></td>
+            </tr>
+
+            <tr>
+                <td>Due Amount</td>
+                <td>₹ <span id="showDue">0.00</span></td>
+            </tr>
+
+            <tr>
+                <td>External Charge</td>
+                <td>₹ <span id="showExternal">0.00</span></td>
+            </tr>
+
+            <tr class="total">
+                <td>Total Amount</td>
+                <td>₹ <span id="showTotal">0.00</span></td>
+            </tr>
+
+        </table>
+
+
+        <div class="signature">
+
+            <div class="signature-box">
+                Signature not required (Digital Fees Slip)
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button class="print-btn" id="printButton"
+            onclick="window.print()">
+
+        🖨 Print Fees Slip
+
+    </button>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
